@@ -9,7 +9,10 @@ from django.utils import timezone
 def index(request):
 	latest_articles_list = Article.objects.order_by('-pub_date')[:10]
 	site_title = "Последние статьи"
-	return render(request, 'articles/list.html', {'latest_articles_list': latest_articles_list, 'label': "Последние новости:", 'site_title': site_title})
+	return render(request, 'articles/list.html', 
+		{'latest_articles_list': latest_articles_list, 
+		'label': "Последние новости:", 
+		'site_title': site_title})
 
 # /aricles/new_post {form info}
 def new_post(request):		

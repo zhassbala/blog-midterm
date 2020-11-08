@@ -4,7 +4,6 @@ from django.db import models
 class Article(models.Model):
     article_title = models.CharField('название статьи', max_length=200)
     article_text = models.TextField('текст статьи')
-    image = models.ImageField('картинка', null=True)
     pub_date = models.DateTimeField("Дата публикации", auto_now=False, auto_now_add=False)
 
     def __str__(self):
