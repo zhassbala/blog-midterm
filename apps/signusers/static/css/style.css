@@ -1,0 +1,61 @@
+@font-face{
+    font-family: "Delphian";
+    src: url('../fonts/Delphian.ttf');
+}
+
+/* font-family: 'Trispace', sans-serif; */
+
+.container{
+	margin-bottom: 100px;
+	margin-top: 20px;
+}
+
+body{
+	background-image: linear-gradient(to right, #12B544, #32ADF4);
+}
+
+button.btn{
+	background-color: green;
+	color: white;
+}
+
+.flex{
+	display: flex;
+}
+
+.flex-col{
+	display: flex;
+	flex-direction: column;
+}
+
+.my-navbar{
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+}
+
+.navbar-ul{
+	font-family: "Delphian", sans-serif;
+	justify-content: space-between;
+	width: 40%;
+	margin-top: 20px;
+}
+
+.navbar-ul li{
+	color: white;
+	display: inline;
+	cursor: pointer;
+}
+
+.searchbox-ul{
+	background-color: #fff;
+	height: 100px;
+	width: 20em;
+	display: none;
+}
+
+.searchbox-ul._active{
+	display: block;
+	position: absolute;
+}

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}
+	    Мой сайт
+	{% endblock title %}</title>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    {% block link %}
+    {% endblock link %}
+</head>
+<body>
+	<div class="my-navbar">
+		<div class="container">
+			<ul class="navbar-ul flex">
+				<li><a href="{% url 'articles:index' %}">Articles</a></li>
+				<li><a href="{% url 'articles:index' %}">Trending</a></li>
+				<li>
+					<div class="searchbox">
+						<p onclick="showsb1()">Search Articles</p>
+						<div id="searchArticles" class="searchbox-ul">
+							<form action="{% url 'articles:search' %}" method="GET">
+								<input type="text" name="searchword" placeholder="Search..."><input type="submit" value="Find!">
+							</form>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container main" id="main-container">
+		{% block content %}
+	    
+		{% endblock content %}
+	</div>
+		<script src="{% static 'js/js.js' %}"></script>
+	
+</body>
+</html>

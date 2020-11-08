@@ -1,0 +1,43 @@
+#title{
+	font-family: "Delphian";
+	color: white;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+#pub-date{
+	border-radius: 5px;
+	padding: 5px 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.article-txt{
+	font-family: 'Trispace', sans-serif;
+	margin: 20px 25px; 
+	font-size: 16px;
+}
+
+.comment{
+	margin: 15px;
+	padding: 15px;
+	font-size: 16px;
+}
+
+.comment-author{
+	font-size: 24px;
+	margin-left: 10px;
+}
+
+.comment-txt{
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+.add-comment-txt, .add-comment-author{
+	opacity: 0.7;
+}
+
+.add-comment-txt:focus, .add-comment-author:focus{
+	opacity: 1;
+}

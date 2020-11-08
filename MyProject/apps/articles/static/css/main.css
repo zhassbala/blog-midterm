@@ -1,0 +1,88 @@
+@font-face{
+    font-family: "Delphian";
+    src: url('../fonts/Delphian.ttf');
+}
+
+/* font-family: 'Trispace', sans-serif; */
+
+:root{
+	--left-color: #12B544;
+	--right-color: #32ADF4;
+}
+
+#main-container{
+	margin-bottom: 100px;
+	padding-top: 100px;
+}
+
+body{
+	background-image: linear-gradient(to right, var(--left-color), var(--right-color));
+}
+
+button.btn{
+	background-color: green;
+	color: white;
+}
+
+.flex{
+	display: flex;
+}
+
+.flex-col{
+	display: flex;
+	flex-direction: column;
+}
+
+.my-navbar{
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+}
+
+.navbar-ul{
+	font-family: "Delphian", sans-serif;
+	justify-content: space-between;
+	width: 40%;
+	margin-top: 20px;
+}
+
+.navbar-ul li{
+	color: white;
+	display: inline;
+	cursor: pointer;
+}
+
+li a{
+	text-transform: none;
+	text-decoration: none;
+	color: white;
+}
+
+.searchbox-ul{
+	font-family: sans-serif;
+	width: 20em;
+	display: none;
+}
+
+.searchbox-ul input[type=submit]{
+	background-image: linear-gradient(to bottom left, var(--left-color), var(--right-color));
+	margin-left: 3px;
+}
+
+.searchbox-ul input[type=text]{
+	color: black;
+}
+
+
+.searchbox-ul input{
+	padding: 5px 15px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+}
+
+.searchbox-ul._active{
+	position: absolute;
+	display: block;
+}

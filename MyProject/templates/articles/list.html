@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    {{site_title}}
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+{% endblock link %}
+
+{% block content %}
+
+	<h1>{{label}}</h1><br>
+
+	{% if latest_articles_list %}
+
+	<div class="articles">
+		
+		{% for a in latest_articles_list %}
+			<h3><a href="{% url 'articles:detail' a.id %}" class="label label-primary">{{a.article_title}}</a> <br></h3>
+		{% endfor %}
+
+	</div>
+	    
+	{% else %}
+	    Статьи не найдены
+	{% endif %}
+	
+	<br>
+	<h3>Добавьте свою статью!</h3>	
+
+	<form action="{% url 'articles:new_post' %}" method="POST" >
+
+		{% csrf_token %}
+		<br>
+
+		<input name="title" type="text" required placeholder="Заголовок статьи" class="form-control">
+		<br>
+
+		<!-- <input type="file" name="image" required class="form-control"> -->
+		<!-- <br> -->
+		<textarea name="text" required placeholder="Текст статьи" class="form-control" rows="5"></textarea>
+		
+		<br>
+
+		<button type="submit" class="btn">Опубликовать статью!</button>
+
+	</form>
+
+{% endblock content %}

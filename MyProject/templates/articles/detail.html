@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    {{article.article_title}}
+{% endblock %}
+
+
+{% block link %}
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock link %}
+
+{% block content %}
+
+<div class="container">
+
+	<h1 id="title">{{article.article_title}}</h1>
+
+	<div class="article-txt">
+		{{article.article_text}}
+	</div>
+
+	<em id="pub-date">Опубликовано {{article.pub_date}}</em>
+
+
+	<h3>Comments</h3>
+
+	<form action="{% url 'articles:leave_comment' article.id %}" method="POST" >
+
+		{% csrf_token %}
+
+		<input type="text" class="form-control add-comment-author" required placeholder="Ваше имя" name="name"><br>
+
+		<textarea class="form-control add-comment-txt" name="text" required placeholder="Текст комментария" rows="5"></textarea>
+		<br>
+
+		<button type="submit" class="btn btn-success">Оставить комментарий</button>
+
+	</form>
+	
+
+	{% if latest_comments_list %}
+
+
+	{% for c in latest_comments_list %}
+
+			<div class="comment">
+				<strong class="comment-author">{{c.author_name}}</strong> says:
+				<p class="comment-txt">{{c.comment_text}}</p>
+			</div>
+		
+	{% endfor %}
+	    
+	{% else %}
+	    Комментарии не найдены! Станьте первым :)
+	
+	{% endif %}
+</div> 
+
+{% endblock content %}
